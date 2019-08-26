@@ -11,7 +11,7 @@ import PokemonCard from '../../components/PokemonCard'
 import * as S from './styled'
 
 export default function PokemonScreen({ num }) {
- 
+ //bug fix to replace only the first padded 0's rather than all of them
   const { loading, error, data } = useQuery(gql`
     {
       pokemonOne(id: ${num.replace(/^0+/g, '')}) {
